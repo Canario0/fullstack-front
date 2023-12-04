@@ -1,0 +1,130 @@
+/* Theme and reset styles */
+html {
+  /* Tamaño de la fuente fijo para poder trabajar con rem y em */
+  font-size: 16px;
+  /* Tema de la web */
+  --primary-color: #e2c119;
+  --secondary-color: #d8342f;
+  --background-color: #d2eff7;
+  --text-color: #000000;
+  --text-color-light: #758398;
+  --subtitle-color: #758398;
+  --border-color: #eaeaea;
+}
+
+html,
+body {
+  /* 
+   * CAVEAT: fuerza que el padding, border y margin
+   * esten contenidos en el "width" del elemento,
+   * simplificando la tarea de marquetado
+   */
+  box-sizing: border-box;
+  /* Resetea margenes and tamaños */
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* Estilos comunes a todos los bloques */
+.color--primary {
+  color: var(--primary-color);
+}
+
+.color--secondary {
+  color: var(--secondary-color);
+}
+
+.background-primary {
+  background-color: var(--primary-color);
+}
+
+.background-secondary {
+  background-color: var(--secondary-color);
+}
+
+.checkbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox>label {
+  width: 9rem;
+}
+
+/* Encabezado */
+.encabezado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  column-gap: 1rem;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+/*
+ * Podria lograr lo mismo haciendo .encabezado > h1
+ * o .encabezado h1 pero siguiendo la metodología BEM
+ * podemos lograr mejor resusabilidad
+ */
+.encabezado__titulo {
+  display: inline-block;
+  font-size: 3rem;
+}
+
+.encabezado__logo {
+  border-radius: 50%;
+}
+
+/* Tarjeta */
+.tarjeta {
+  margin: auto;
+  max-width: 500px;
+  padding: 2rem;
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+/* Formulario */
+.formulario {
+  padding-bottom: 1rem;
+}
+
+.formulario__titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+}
+
+.formulario__content {
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.formulario__acciones {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.formulario__acciones>button {
+  width: 9rem;
+  height: 3.5rem;
+  border-radius: 16px;
+  font-weight: bold;
+}

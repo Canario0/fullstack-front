@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/jpeg" href="./images/logo.jpg">
+  <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+  <title>Pizzas Full Stack</title>
+</head>
+
+<body>
+  <main>
+    <!--
+    CAVEAT: using height and width allows the browser to compute tha aspect ratio and
+    prepare a space for the image, this will avoid unnecessary layer shift. And the use
+    of loading attribute allows tells the browser to load the image when is not in the
+    view port (currently for this page will not do anything but is nice to have it).
+  -->
+    <header class="encabezado">
+      <img class="encabezado__logo" src="./images/logo.jpg" alt="Logo de la compañía" width="250" height="167"
+        loading="lazy" />
+      <h1 class="encabezado__titulo">
+        <span class="color--primary">Pizzas</span> <span class="color--secondary">Full Stack</span>
+      </h1>
+    </header>
+    <div class="tarjeta">
+      <p><strong>Pedido realizado con exito.</strong>
+      </p>
+      <p>
+        Estamos preparando su pizza, gracias por la espera.
+      </p>
+    </div>
+  </main>
+</body>
+
+</html>
