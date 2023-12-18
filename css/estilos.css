@@ -128,3 +128,21 @@ main {
   border-radius: 16px;
   font-weight: bold;
 }
+
+.availability {
+  grid-column: span 2;
+  visibility: hidden;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+}
+
+.availability__available {
+  visibility: visible;
+  color: var(--text-color-light)
+}
+
+.availability__out-of-stock {
+  visibility: visible;
+  color: var(--secondary-color)
+}
