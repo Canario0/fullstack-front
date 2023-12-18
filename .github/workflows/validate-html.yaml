@@ -1,0 +1,18 @@
+name: HTML5 Validator
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Validate
+        uses: VaultVulp/action-pipenv@v2.0.1
+        with:
+          root: : ${{ github.workspace }}
