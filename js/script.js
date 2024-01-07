@@ -24,14 +24,14 @@ function checkAvailability(size) {
     },
   })
     .done((r) => {
-      const div = $("#size_availability");
-      div.text(r);
-      div.addClass(
+      const element = $("#size_availability");
+      element.text(r);
+      element.addClass(
         r === "Disponible"
           ? "availability__available"
           : "availability__out-of-stock"
       );
-      div.removeClass(
+      element.removeClass(
         r === "Disponible"
           ? "availability__out-of-stock"
           : "availability__available"
@@ -48,16 +48,27 @@ function setup() {
         e.preventDefault();
         return;
       }
+      const availability = $("#size_availability").text();
+      console.log(availability);
+      if (availability !== "Disponible") {
+        e.preventDefault();
+        return;
+      }
     })
     .on("reset", () => {
       genericClear("nombre");
       genericClear("apellidos");
     });
+  const updateAvailability = (value) => {
+    if (value) checkAvailability(value);
+  };
   $("#tamaño").on("change", (e) => {
     const value = $(e.target).val();
-    console.log(value);
-    if (value) checkAvailability(value);
+    updateAvailability(value);
   });
+  // CAVEAT: initialy there is a selector selected by default.
+  const value = $("#tamaño").val();
+  updateAvailability(value);
 }
 
 $(setup);

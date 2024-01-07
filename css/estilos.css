@@ -129,12 +129,26 @@ main {
   font-weight: bold;
 }
 
+.size_input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.size_input>select {
+  height: 100%;
+  flex-grow: 2;
+}
+
 .availability {
-  grid-column: span 2;
-  visibility: hidden;
+  min-width: 90px;
+  visibility: visible;
   font-size: 0.8rem;
   line-height: 0.8rem;
-  text-align: center;
 }
 
 .availability__available {
